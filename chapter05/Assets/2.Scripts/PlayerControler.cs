@@ -23,4 +23,13 @@ public class PlayerControler : MonoBehaviour
             transform.Translate(movestep, 0, 0);
         }
     }
+
+    public void LButtonDown()
+    {
+        transform.Translate(-movestep, 0, 0);
+    }
+    public void RButtonDown()
+    {
+        transform.Translate(movestep, 0, 0);
+    }
 }
