@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -21,9 +21,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && 
+            rb.velocity.y == 0)
         {
             rb.AddForce(transform.up * jumpForce);
+            animator.SetTrigger("Jump Trigger");
         }
 
         int key = 0;
@@ -42,6 +44,24 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(key, 1, 1);
         }
 
-        animator.speed = speedX;
+        if (rb.velocity.y == 0)
+        {
+            animator.speed = speedX / 2.0f;
+        }
+        else
+        {
+            animator.speed = 1.0f;
+        }
+        
+        if(transform.position.y < -10)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("Goal!");
+        SceneManager.LoadScene("ClearScene");
     }
 }
