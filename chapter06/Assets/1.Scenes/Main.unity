@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 1013196799}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1347,6 +1347,10 @@ PrefabInstance:
     - target: {fileID: 4718577468037119541, guid: b5a2976bce52f534796a6e64f566062d, type: 3}
       propertyPath: m_Name
       value: cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718577468037119541, guid: b5a2976bce52f534796a6e64f566062d, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5197756565716548537, guid: b5a2976bce52f534796a6e64f566062d, type: 3}
       propertyPath: m_LocalPosition.x
