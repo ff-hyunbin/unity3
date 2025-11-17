@@ -13,13 +13,14 @@ public class TargetController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Collision.gameObject.tag.Equals("bamsonggi"))
+
+        if (collision.gameObject.tag.Equals("bamsonggi"))
         {
             gt.Generate();
             //Destroy(Collision.gameObjedct);
             Destroy(gameObject);
-        }
     }
+}
 }
